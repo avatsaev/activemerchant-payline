@@ -27,7 +27,9 @@ module ActiveMerchant
       def do_capture(money, authorization, options = {})
         direct_api_request :do_capture do |xml|
           xml.transactionID authorization
+          p "///////////////--->"
           p xml
+          p "///////////////--->"
           add_payment(xml, money, currency_code(options[:currency]), :capture, options[:mode])
         end
       end
